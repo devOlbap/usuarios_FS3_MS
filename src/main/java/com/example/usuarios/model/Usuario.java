@@ -2,8 +2,6 @@ package com.example.usuarios.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-// import jakarta.persistence.GeneratedValue;
-// import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 
@@ -45,30 +43,15 @@ public class Usuario {
     )
     private String password;
     
-    // @ManyToMany(fetch = FetchType.LAZY)
-    // @JoinTable(name = "usuario_rol",
-    //            joinColumns = @JoinColumn(name = "usuario_id_usuario"),
-    //            inverseJoinColumns = @JoinColumn(name = "rol_id_rol"))
-    // private Set<Rol> roles = new HashSet<>();
-
-    // @ManyToMany(fetch = FetchType.LAZY)
-    // @JoinTable(name = "usuario_direccion",
-    //            joinColumns = @JoinColumn(name = "usuario_id_usuario"),
-    //            inverseJoinColumns = @JoinColumn(name = "direccion_id_direccion"))
-    // private List<Direccion> direcciones;
-
-    // Constructor vacío requerido por JPA
+    
     public Usuario() {}
 
     public Usuario(String username, String nombre, String apellido, String password
-        //Set<Rol> roles, List<Direccion> direcciones
         ) {
         this.username = username;
         this.nombre = nombre;
         this.apellido = apellido;
         this.password = password;
-        // this.roles = roles;
-        // this.direcciones = direcciones;
     }
 
     // Getters y setters
@@ -111,22 +94,6 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    // public Set<Rol> getRoles() {
-    //     return roles;
-    // }
-
-    // public void setRoles(Set<Rol> roles) {
-    //     this.roles = roles;
-    // }
-
-    // public List<Direccion> getDirecciones() {
-    //     return direcciones;
-    // }
-
-    // public void setDirecciones(List<Direccion> direcciones) {
-    //     this.direcciones = direcciones;
-    // }
 
     public List<String> validarCampos() {
         List<String> mensajes = new ArrayList<>();
