@@ -24,12 +24,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario getUsuarioById(Long id){
         Optional<Usuario> usrOpt = userRepository.findById(id);
-        // Verificar si la dirección existe en la base de datos
         if (usrOpt.isPresent()) {
-            return usrOpt.get(); // Devolver la dirección si existe
+            return usrOpt.get(); 
         } else {
-            // Manejar el caso en el que la dirección no existe (por ejemplo, lanzar una excepción o devolver null)
-            return null; // En este ejemplo, se devuelve null si la dirección no se encuentra
+            return null; 
         }
     }
     @Override
@@ -65,12 +63,5 @@ public class UsuarioServiceImpl implements UsuarioService {
         return false;
     }
 
-    // Método para generar un nuevo ID único
-    // private Long generarNuevoId() {
-
-    //     Long last_usr_id = userRepository.findMaxId();
-    //     // Aquí podrías implementar la lógica para generar un ID único, por ejemplo, consultando el máximo ID en la base de datos y sumándole uno
-    //     // En este ejemplo, simplemente se genera un ID aleatorio (para fines demostrativos)
-    //     return last_usr_id+1;
-    // }
+  
 }
