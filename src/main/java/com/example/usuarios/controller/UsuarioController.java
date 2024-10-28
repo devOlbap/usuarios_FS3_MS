@@ -68,7 +68,7 @@ public class UsuarioController {
 
         if(user.getPassword().trim().equals(log.getPassword().trim())){
             //Acceso correcto!
-            mensajes.add("Bienvenido! Acceso correcto");
+            mensajes.add("Bienvenido "+user.getFullName()+" ! Acceso correcto");
             return ResponseEntity.ok(mensajes);
         }
         mensajes.add("Contraseña incorrecta.");
