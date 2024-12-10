@@ -46,6 +46,26 @@ public class RolController {
         return ResponseEntity.badRequest().body(errores);
 
     }
+
+    // @PostMapping("/add")
+    // public ResponseEntity<?> createRol(@RequestBody Rol rol) {
+    //     List<String> errores = rol.validarCampos();
+        
+    //     if (errores.isEmpty()) {
+    //         Rol createdRol = rolService.createRol(rol);
+    //         return ResponseEntity.ok(Map.of(
+    //             "success", true,
+    //             "message", "Rol creado con éxito",
+    //             "data", createdRol
+    //         ));
+    //     }
+        
+    //     return ResponseEntity.badRequest().body(Map.of(
+    //         "success", false,
+    //         "message", "Error al crear el rol",
+    //         "errors", errores
+    //     ));
+    // }
     @PutMapping("/{id}")
     public Rol updateRol(@PathVariable Long id, @RequestBody Rol rol) {
         return rolService.updateRol(id, rol);
